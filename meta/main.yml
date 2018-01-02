@@ -1,0 +1,27 @@
+---
+dependencies:
+  - { role: goozbach.EPEL, when: ansible_os_family == "RedHat" }
+  - { role: gabethecabbage.traditional-desktop }
+
+galaxy_info:
+  author: gabethecabbage
+  description: Ensures x2go server and client applications are installed
+  license: BSD
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - yakkety
+        - zesty
+        - artful
+    - name: EL
+      versions:
+        - 6
+        - 7
+  galaxy_tags:
+    - networking
+    - desktop
+    - remote
+    - SSH
+    - X11

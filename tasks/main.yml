@@ -1,0 +1,15 @@
+---
+- name: x2go repository available (Ubuntu only, RHEL packages obtained from EPEL) 
+  apt_repository:
+    repo: 'ppa:x2go/stable'
+  when: ansible_distribution == "Ubuntu"
+
+- name: x2go client and server packages are installed
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - x2goserver-xsession
+    - x2goserver
+    - x2goclient
+...
